@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a78b945da2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <title><?= $title ?></title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.php" class="ursule">Le blog de Tante Ursule</a>
+                <a href="admin_index.php" class="administration"><i class="fas fa-pen-nib"></i>Administration</a>
+        </nav>
+    </header>
+    <main>
+        <?php include $template ?>
+    </main>
+    <footer>
+        <img src="../Blog.version2/imgs/3wa.png" alt="3wa.png">
+        <p><strong><i class="far fa-copyright"></i>3w Academy</strong>-PHP:Module2-Formation Développeur WEB-Tous droits réservés</p>
+        <p>Cet exercice est mis à disposition des stagiaires dans le cadre exclusif de leur apprentissage</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+h1 {
+    text-shadow: none;
+}
+
+.accent {
+    display : inline-block;
+    margin : 0 0.5rem;
+    padding : 0 0.5rem;
+    background: var(--bg-accent,rgb(222, 88, 51));
+    border : 1px solid #111;
+    border-radius: 5px;
+    color : var(--color-bg-accent,#ffffff);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+a {
+    color: var(--bg-accent,#000000);
+}

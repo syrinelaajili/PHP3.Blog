@@ -1,0 +1,64 @@
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css" type="text/css">
+</head>
+<main>
+    <section class="section3">
+        <a href="login.php" class="noir">Administration</a> /
+        <a href="" class="gris">Gestion des articles</a>
+    </section>
+    <div class="containerAll">
+        <div class="leftDiv">
+
+
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-home-tab" data-toggle="pill" data-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fas fa-newspaper"></i>Gestion des articles</button>
+                <button class="nav-link nav" id="v-pills-profile-tab" data-toggle="pill" data-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-tags"></i>Gestion des catégories</button>
+                <button class="nav-link nav" id="v-pills-messages-tab" data-toggle="pill" data-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fas fa-users"></i>Gestion des auteurs</button>
+            </div>
+
+        </div>
+
+        <div class="rightDiv">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h2 class="display-4">Gestion des articles</h2>
+                </div>
+            </div>
+
+            <a href="admin_new.php"><button type="button" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i>Créer un article</button></a>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Création</th>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Auteur</th>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($posts as $post) : ?>
+                        <tr>
+                            <th scope="row"><a href="show_post.php?id_post= <?= $post['Id'] ?>"><?= $post['Id'] ?></a></th>
+                            <td><?= $post['CreationTimestamp'] ?></td>
+                            <td><?= $post['Title'] ?></td>
+                            <td><?= $post['FirstName'] ?><?= $post['LastName'] ?></td>
+                            <td><?= $post['Name'] ?></td>
+                            <td><a href="edit_post.php?id_post=<?= $post['Id'] ?>" <?= $post['Id'] ?>><button type="button" class="btn btn-warning"><i class="fas fa-pen-nib"></i></button></a></td>
+                            <td><a href="delete_post.php?id_post=<?= $post['Id'] ?>" <?= $post['Id'] ?>><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a></td>
+
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <p>Liste des posts classés par ordre chronologique inversé <strong>(<?= $nbrePosts ?> articles au total)</strong></p>
+
+        </div>
+    </div>
+
+</main>

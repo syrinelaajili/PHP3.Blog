@@ -1,0 +1,29 @@
+/*-------------------admin.phtml-------------------------*/
+.noir {
+    color: black;
+}
+.gestion {
+    color: grey;
+}
+
+.nav {
+    color: rgb(70, 179, 251);
+}
+.containerAll {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
+}
+
+.rightDiv {
+    width: 75%;
+}
+
+.leftDiv {
+    width: 20%;
+    background-color: rgb(228, 227, 227);
+}
+.btn-lg {
+    margin-bottom: 1%;
+    float: left;
+}

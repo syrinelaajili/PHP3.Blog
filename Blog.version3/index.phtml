@@ -1,0 +1,26 @@
+<main>
+    <section class="section1">
+        <h1>Accueil du blog</h1>
+        <p>Les derniers articles postés</p>
+    </section>
+    <h2>Les nouvelles de Tante URSULE</h2>
+    <div class="container">
+        <?php foreach ($posts as $post) : ?>
+            <section class="section2">
+                <div class="category">
+                    <h3><?= $post['Title'] ?></h3>
+                    <p>Dans la catégorie: <span><?= $post['Name'] ?></span> </p>
+                </div>
+                <div class="post">
+                    <p> <?= $post['Contents'] ?></p>
+                    <!-- Lien vers l'article de blog-->
+                    <a href="show_post.php?id_post=<?= $post['Id'] ?>" <?= $post['Id'] ?>><button>Lire la suite</button></a>
+                </div>
+                <div class="author">
+                    <p>Rédigé par <strong><?= $post['FirstName'] ?><?= $post['LastName'] ?></strong> <?= $post['CreationTimestamp'] ?></p>
+                </div>
+            </section>
+        <?php endforeach; ?>
+    </div>
+
+</main>
